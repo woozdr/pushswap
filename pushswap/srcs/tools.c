@@ -6,13 +6,14 @@
 /*   By: lmarti <lmarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/05 06:41:03 by lmarti            #+#    #+#             */
-/*   Updated: 2015/03/06 10:39:13 by lmarti           ###   ########.fr       */
+/*   Updated: 2015/03/10 08:40:56 by lmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push.h>
 #include <stdlib.h>
 #include <libft.h>
+#include <limits.h>
 
 inline t_data		*get_data(void)
 {
@@ -24,6 +25,34 @@ inline t_data		*get_data(void)
 	return (d);
 }
 
+static void			check_int(char *nbr)
+{
+	char	*min_int;
+	char	*max_int;
+	size_t	size;
+	size_t	i;
+
+	min_int = ft_itoa(INT_MIN);
+	max_int = ft_itoa(INT_MAX);
+	if ((size = ft_strlen(nbr)) > ft_strlen(min_int))
+		error();
+	i = -1;
+	while (++i < size)
+	{
+		if (nbr[i] == '-' && i == 0)
+			continue ;
+		if (!ft_isdigit(nbr[i]))
+			error();
+	}
+	if (size >= ft_strlen(max_int))
+	{
+		if (size == ft_strlen(max_int) && ft_strcmp(nbr, max_int) > 0)
+			error();
+		if (size == ft_strlen(min_int) && ft_strcmp(nbr, min_int) > 0)
+			error();
+	}
+}
+
 static int			check(char	*nbr)
 {
 	t_data	*d;
@@ -31,6 +60,7 @@ static int			check(char	*nbr)
 	UINT	i;
 	int		nb;
 
+	check_int(nbr);
 	if (*nbr && *nbr == '0')
 		nb = 0;
 	else if (!(nb = ft_atoi(nbr)))

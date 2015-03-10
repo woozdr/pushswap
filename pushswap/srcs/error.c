@@ -6,7 +6,7 @@
 /*   By: lmarti <lmarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/05 05:35:17 by lmarti            #+#    #+#             */
-/*   Updated: 2015/03/05 05:59:39 by lmarti           ###   ########.fr       */
+/*   Updated: 2015/03/10 05:39:09 by lmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	error(void)
 {
 	ft_putstr_fd("Error", 2);
 	ft_putstr_fd("\n", 2);
-	exit(-1);
+	exit(EXIT_FAILURE);
 }

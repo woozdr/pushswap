@@ -6,15 +6,15 @@
 /*   By: lmarti <lmarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/05 07:21:18 by lmarti            #+#    #+#             */
-/*   Updated: 2015/03/06 05:11:28 by lmarti           ###   ########.fr       */
+/*   Updated: 2015/03/10 07:20:27 by lmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push.h>
 
-static void	rotate(t_lst *lst)
+static void	rotate(t_lst **lst)
 {
-	lst = lst->nxt;
+	*lst = (*lst)->nxt;
 }
 
 void		ra(void)
@@ -24,7 +24,7 @@ void		ra(void)
 	d = get_data();
 	if (d->nba < 1)
 		return ;
-	rotate((*d->a));
+	rotate(d->a);
 }
 
 void		rb(void)
@@ -34,7 +34,7 @@ void		rb(void)
 	d = get_data();
 	if (d->nbb < 1)
 		return ;
-	rotate((*d->b));
+	rotate(d->b);
 }
 
 void		rr(void)

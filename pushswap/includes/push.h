@@ -6,7 +6,7 @@
 /*   By: lmarti <lmarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/05 04:33:01 by lmarti            #+#    #+#             */
-/*   Updated: 2015/03/06 10:39:13 by lmarti           ###   ########.fr       */
+/*   Updated: 2015/03/10 08:40:56 by lmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define UINT unsigned int
 #include <stdio.h>
+#include <stdbool.h>
 
 enum				e_op
 {
@@ -53,6 +54,7 @@ typedef struct		s_data
 ** --------------- main.c ---------------
 */
 
+void				print(t_lst **l, UINT size);
 
 /*
 ** --------------- error.c ---------------
@@ -97,5 +99,11 @@ void				rr(void);
 void				rra(void);
 void				rrb(void);
 void				rrr(void);
+
+/*
+** --------------- algo.c ---------------
+*/
+
+void				algo(void);
 
 #endif

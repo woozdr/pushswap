@@ -6,15 +6,15 @@
 /*   By: lmarti <lmarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/05 07:27:13 by lmarti            #+#    #+#             */
-/*   Updated: 2015/03/06 06:09:59 by lmarti           ###   ########.fr       */
+/*   Updated: 2015/03/10 08:40:56 by lmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push.h>
 
-static void	reverse(t_lst *lst)
+static void	reverse(t_lst **lst)
 {
-	lst = lst->prv;
+	*lst = (*lst)->prv;
 }
 
 void		rra(void)
@@ -24,7 +24,7 @@ void		rra(void)
 	d = get_data();
 	if (d->nba < 1)
 		return ;
-	reverse((*d->a));
+	reverse(d->a);
 }
 
 void		rrb(void)
@@ -34,7 +34,7 @@ void		rrb(void)
 	d = get_data();
 	if (d->nbb < 1)
 		return ;
-	reverse((*d->b));
+	reverse(d->b);
 }
 
 void		rrr(void)
