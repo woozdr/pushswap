@@ -6,7 +6,7 @@
 /*   By: lmarti <lmarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/05 04:21:48 by lmarti            #+#    #+#             */
-/*   Updated: 2015/03/10 08:40:56 by lmarti           ###   ########.fr       */
+/*   Updated: 2015/03/10 11:37:54 by lmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	print(t_lst **l, UINT size)
 
 	tmp = *l;
 	i = -1;
+	printf("\n");
 	while (++i < size)
 	{
 		printf("lst[%d] = %d\n", i, tmp->nb);

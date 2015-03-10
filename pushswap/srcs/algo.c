@@ -6,7 +6,7 @@
 /*   By: lmarti <lmarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/10 05:57:56 by lmarti            #+#    #+#             */
-/*   Updated: 2015/03/10 08:40:56 by lmarti           ###   ########.fr       */
+/*   Updated: 2015/03/10 11:37:54 by lmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void		algo(void)
 			if ((*d->a)->nb > (*d->a)->nxt->nb)
 			{
 				d->op[SA]();
-				ft_putstr("sa\n");
-				print(d->a, d->nba);
+				ft_putstr("sa ");
+				//print(d->a, d->nba);
 				end = false;
 				if (is_sort())
 				{
@@ -62,12 +62,17 @@ void		algo(void)
 				}
 			}
 			d->op[RA]();
-			ft_putstr("ra\n");
-			print(d->a, d->nba);
+			ft_putstr("ra ");
+			//print(d->a, d->nba);
+		}
+		if (is_sort())
+		{
+			end = true;
+			break ;
 		}
 		d->op[RA]();
-		ft_putstr("ra\n");
-		print(d->a, d->nba);
+		ft_putstr("ra ");
+		//print(d->a, d->nba);
 	}
 /*	d->op[SA]();
 	ft_putstr("sa ");
@@ -105,7 +110,7 @@ void		algo(void)
 		//d->op[RA]();
 		//ft_putstr("ra ");
 	}*/
-	print(d->a, d->nba);
-	printf("is sort\n");
+	//print(d->a, d->nba);
+	//printf("is sort\n");
 
 }
